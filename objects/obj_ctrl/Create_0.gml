@@ -1,7 +1,7 @@
 /// @description Example stuff
 
 // Define a "lightweight object"
-ds meh lw_object
+lwo meh lw_object
 {
 	// Variables go here
 	set "test"  to 5;
@@ -29,3 +29,60 @@ def AnotherObject prototype {
 }
 
 a = new(Object);
+
+// Foreach examples
+lst_values = ds_list_create();
+ds_list_add(lst_values,
+	55,
+	178,
+	213
+);
+
+//foreach (int element in fibNumbers)
+
+foreach lst_values as_list res loop {
+	show_debug_message(string(res[kvp.value]));
+}
+// Outputs:
+// 55
+// 178
+// 213
+
+map_values = ds_map_create();
+ds_map_add(map_values,"Test1","Meh");
+ds_map_add(map_values,"Test2","Beh");
+ds_map_add(map_values,"Test3","Yeh");
+
+foreach map_values as_map res loop {
+	show_debug_message(string(res[kvp.key])+":"+string(res[kvp.value]));
+}
+
+/*
+foreach map_values as_key key value val loop {
+	
+}
+//*/
+
+grd_data = ds_grid_create(4,4);
+grd_data[# 0, 0] = 11;
+grd_data[# 1, 2] = 38;
+grd_data[# 3, 3] = 70;
+
+foreach grd_data as_grid res loop {
+	show_debug_message(string(res[kvp.value]));
+}
+
+arr_values = [1, 2, 3, 4, 5];
+
+/*
+foreach arr_values as_array res loop {
+	show_debug_message(string(res[kvp.value]));
+}
+//*/
+
+// Outputs:
+// 1
+// 2
+// 3
+// 4
+// 5

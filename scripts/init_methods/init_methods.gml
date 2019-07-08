@@ -15,6 +15,25 @@ gml_pragma("global","init_methods()");
 
 //	Convenient "typedefs"
 
+// -----------------------------
+
+//	Foreach support
+
+#macro foreach			for(var ds = 
+#macro as_list			, ds_type = ds_type_list, i = ds_first_index(ds,ds_type), arr_tmp = [i,ds[|i]],
+#macro as_map			, ds_type = ds_type_map, i = ds_first_index(ds,ds_type), arr_tmp = [i,ds[?i]],
+#macro as_grid			, ds_type = ds_type_grid, i = ds_first_index(ds,ds_type), arr_tmp = [i,ds[# 0, 0]],
+#macro as_array			, ds_type = ds_type_array, i = ds_first_index(ds,ds_type), arr_tmp = [i,ds[i]],
+#macro loop				= arr_tmp;ds_condition(arr_tmp,ds,ds_type);ds_next(ds,ds_type,arr_tmp))
+#macro ds_type_array	128
+
+enum kvp {				// Key-value pair indices
+	key   = 0,
+	value = 1,
+};
+
+//	Foreach support
+
 //	----------------------------
 
 //	Prototype
@@ -22,7 +41,7 @@ gml_pragma("global","init_methods()");
 #macro	lw_object = obj;
 #macro	set obj[?
 #macro	to ] = 
-#macro	ds var obj = ds_map_create();
+#macro	lwo var obj = ds_map_create();
 
 #macro	prototype = ins; with(ins) 
 #macro	def var ins = instance_create_depth(x,y,0,obj_object);
