@@ -63,8 +63,29 @@ enum kvp {				// Key-value pair indices
 #macro	method_event	0
 
 global.return_value = undefined;
+global.multiple_object = noone;
 global.temp_value = -1;
 
 //	Method extensions
 
 //	----------------------------
+
+
+//	Custom properties
+
+#macro uses	 
+#macro props prop = ds_map_create(); prop_index = 0;
+#macro equals = prop_index; prop[?prop_index++] = 
+#macro no_props	prop_index
+
+//	----------------------------
+
+//	L-value trickery
+
+#macro nearest		var _id = instance_nearest(x, y, all); (_id)
+#macro multiple_obj	global.multiple_object
+#macro multiple		with(global.multiple_object) id
+#macro object		with(object_index) id
+#macro similar		with(all) if 
+
+//	--------------------------------

@@ -5,19 +5,32 @@ event_inherited();
 
 functions
 
-	func test1 as {
+	func add as {
 		// Use named arguments
 		params
 			param a
 			param b
 		end_params
 		
-		ret sqr(a) + b;
+		ret a + b;
 	}
 	
-	func test2 as {
+	func cmp as {
+		params
+			param a
+			param b
+		end_params
+		
+		ret a > b;
+	}
+	
+	func test as {
 		// Use args array
 		ret args;
+	}
+	
+	func new_list as {
+		ret list();
 	}
 
 end_functions
