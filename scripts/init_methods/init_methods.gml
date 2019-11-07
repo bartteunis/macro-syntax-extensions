@@ -9,6 +9,9 @@ gml_pragma("global","init_methods()");
 #macro	queue	ds_queue_create
 #macro	stack	ds_stack_create
 
+//#macro	vertex_format
+//#macro	vertex 
+
 #macro	color	make_color_rgb
 
 #macro	log		show_debug_message
@@ -87,5 +90,21 @@ global.temp_value = -1;
 #macro multiple		with(global.multiple_object) id
 #macro object		with(object_index) id
 #macro similar		with(all) if 
+
+#macro tst unique_var; unique_var
+
+#macro meeh { (
+
+//	--------------------------------
+
+
+//	Compact function arguments
+
+#macro pos		x, y
+#macro pos3d	x, y, z
+#macro image_scale image_xscale, image_yscale
+
+#macro vec		global.vector
+#macro vec_arg	global.vector[0], global.vector[1]
 
 //	--------------------------------

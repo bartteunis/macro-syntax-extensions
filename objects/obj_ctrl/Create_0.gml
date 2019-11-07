@@ -99,17 +99,31 @@ multiple.value = "foo";		// Currently uses obj_blabla behind the scenes
 //object.value = "foo";		// Same for current object_index
 
 with(obj_blabla) {
-	show_debug_message(value);
+	log(value);
 }
 
 similar x > 0 && y > 0 {
-	show_debug_message(string(id));
+	log(string(id));
 }
 
-/*
+
 {
-	"a" : 0
+	b = 0;
+	c = 8;
 }
-*/
+
+unique_var = 0;
+
+blablabla = tst = 77;
+log(blablabla);
+
+tempje = [3, 4, 5];
+log(tempje);
 
 var a = 0;
+
+global.array = [20, 20];
+#macro unpack global.array[0], global.array[1]; global.array = 
+
+vec = [800, 400];
+instance_create_depth(vec_arg, 0, obj_meeh);
