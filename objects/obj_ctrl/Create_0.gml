@@ -127,3 +127,6 @@ global.array = [20, 20];
 
 vec = [800, 400];
 instance_create_depth(vec_arg, 0, obj_meeh);
+
+pos_array = [pos];
+log(pos_array);
