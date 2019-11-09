@@ -55,6 +55,14 @@ gml_pragma("global","init_methods()");
 
 //	----------------------------
 
+#region Lightweight objects
+
+	#macro	obb enum
+
+#endregion
+
+//	----------------------------
+
 #region Method extensions
 
 	#macro	functions		var func_id = 0; var args = global.args;
@@ -89,7 +97,7 @@ gml_pragma("global","init_methods()");
 
 #region L-value trickery
 
-	#macro nearest		var _id = instance_nearest(x, y, all); (_id)
+	#macro nearest		(instance_nearest(x, y, all))
 	#macro multiple_obj	global.multiple_object
 	#macro multiple		with(global.multiple_object) id
 	#macro object		with(object_index) id
@@ -115,6 +123,17 @@ gml_pragma("global","init_methods()");
 
 	#macro vec		global.vector
 	#macro vec_arg	global.vector[0], global.vector[1]
+	
+	#macro origin_2d	0, 0
+	#macro origin_3d	0, 0, 0
+	
+	#macro vec2	0, 0
+	#macro vec3 0, 0, 0
+	#macro vec4 0, 0, 0, 0
+	
+	#macro mat4 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	
+	#macro ds_grid_region_all	0, 0, ds_grid_width(grid_current), ds_grid_height(grid_current)
 
 #endregion
 

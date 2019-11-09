@@ -1,0 +1,1 @@
+return array_create(argument0);
